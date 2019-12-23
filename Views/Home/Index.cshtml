@@ -1,0 +1,25 @@
+﻿@using Crudelicious.Models
+@model List<Dish>
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Welcome to CRUDelicious</h1>
+
+    <h4>Check out some recent dishes!</h4>
+    <a href="/new">Add a Dish</a>
+
+    @foreach( var food in @Model)
+    {
+        <h4><a href="/single/@food.DishId">@food.Name</a> by @food.Chef</h4>
+    }
+    
+</body>
+</html>

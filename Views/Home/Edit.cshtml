@@ -1,0 +1,33 @@
+@using Crudelicious.Models
+@model Dish
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+        <form asp-action="Edit" asp-controller="Home" method="post" asp-route-DishId="@Model.DishId" >
+                <label asp-for="Chef"></label>
+                <input asp-for="Chef"><br>
+                <label asp-for="Name">Name of Dish</label>
+                <input asp-for="Name"><br>
+                <label asp-for="Calories"># of Calories</label>
+                <input asp-for="Calories"><br>
+                <label asp-for="Tastiness"></label>
+                <select asp-for="Tastiness">
+                    <option>--</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                </select><br>
+                <label asp-for="Description"></label><br>
+                <textarea asp-for="Description"></textarea>
+                <input type="submit" value="Edit!">
+            </form>
+</body>
+</html>
